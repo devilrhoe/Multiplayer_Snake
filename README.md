@@ -4,6 +4,7 @@ Multiplayer Snake game based on webSockets
 Project Files:
 
   -Server side: 
+  
     HttpServer.js
     GameMapEngine.js
     GameEngine.js
@@ -12,6 +13,7 @@ Project Files:
     WebSocketEngine.js
   
   -Client side:
+  
     index.html
     TestObject.js
     TestCanvas.js
@@ -20,6 +22,7 @@ Project Files:
     
     
 File description:
+
 Server side:
 
 -HttpServer.js: This class creates a http server modified to serve most common types of webfiles(js, css, html, php...). These files must be located on the root path of the project. This HttpServer will listen to port declared on server.js
