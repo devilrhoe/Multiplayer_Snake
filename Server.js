@@ -10,12 +10,13 @@ var MAP_HEIGHT = 2000;					//Map height size in px
 var MAP_WIDTH = 2000;					//Map width size in px
 var MAP_FOOD = 20;						//0-100% value of food in map
 var httpPort = 80;
+var PLAYER_INITIAL_LENGHT = 4;
 
 
 var httpServerInstance = new httpServer(httpPort);
 var webSocketEngineInstance = new webSocketEngine(httpServerInstance.getServer());
 var gameMapEngineInstance = new gameMapEngine(MAP_WIDTH,MAP_HEIGHT,MAP_FOOD);
-var gameEngineInstance = new gameEngine(gameMapEngineInstance,webSocketEngineInstance);
+var gameEngineInstance = new gameEngine(gameMapEngineInstance,webSocketEngineInstance, PLAYER_INITIAL_LENGHT);
 
 
 //console.log(JSON.stringify(gameEngineInstance.mapGrid));
