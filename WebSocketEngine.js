@@ -1,4 +1,4 @@
-var webSocketsServerPort = 80;
+var webSocketsServerPort = 8889;
 var WebSocket = require('ws');
 var Events = require('events');
 var EvEmitter = Events.EventEmitter;
