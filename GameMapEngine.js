@@ -48,8 +48,12 @@ GameMapEngine.prototype.build = function() {
 
 GameMapEngine.prototype.getTotalFoodAmount = function() {
 	// TODO:
-	var amount = ((this.height*this.width)*20)/100;
+	var amount = ((this.height*this.width)*this.mapFood)/100;
 	return amount;
+};
+GameMapEngine.prototype.placeObject = function(x, y, index) {
+	// TODO:
+	this.mapGrid[x][y] = new gameObject(index);
 };
 
 

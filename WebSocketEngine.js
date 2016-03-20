@@ -14,6 +14,7 @@ var self;
 // Constructor
 function WebSocketEngine(server) {
 	// always initialize all instance properties
+
 	var self =this;
 	this.self = self;
 	this.server = server;
@@ -42,27 +43,18 @@ function WebSocketEngine(server) {
 // class methods
 WebSocketEngine.prototype.onMessage = function(data,index) {
 	// TODO:
-	
-	console.log(data);
 	var obj;
 	if ((data!=null)&&(data.type=="utf8")){
 		obj = JSON.parse(data.utf8Data);
 	}
-	switch(obj.event){
-
-		case "join":
-			eventEmitter.emit('event', index);
-			console.log("player",obj.data,", on index ",index, "has joined the game");
-		break;
-
-	}
 	
-
+	eventEmitter.emit('event', index, obj);
 };
 
 WebSocketEngine.prototype.send = function(object) {
 	// TODO:
-	connection.send(object);
+	var obj = JSON.stringify(object);
+	connection.send(obj);
 
 };
 
