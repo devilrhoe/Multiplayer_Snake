@@ -4,13 +4,15 @@ var http = require('http'),
     url = require('url'),
     path = require('path'),
     fs = require('fs');
+
 var mimeTypes = {
     "html": "text/html",
     "jpeg": "image/jpeg",
     "jpg": "image/jpeg",
     "png": "image/png",
     "js": "text/javascript",
-    "css": "text/css"}; 
+    "css": "text/css"
+}; 
 
 
 
@@ -18,6 +20,7 @@ var mimeTypes = {
 function HTTPServer(port) {
 	// always initialize all instance properties
 	this.port= port;
+	console.log("creating server in port ", port);
 	this.server =http.createServer(function(request, response) {
 
 	  var uri = url.parse(request.url).pathname
