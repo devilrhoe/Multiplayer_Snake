@@ -2,7 +2,7 @@ var nickname;
 var playerInitialLenght;
 var body=[ ];
 var timer;
-var 
+
 
 
 
