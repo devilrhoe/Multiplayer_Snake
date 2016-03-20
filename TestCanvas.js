@@ -51,7 +51,7 @@ function WebSocketTest() {
         console.log("WebSocket is supported by your Browser!");
            
        // Let us open a web socket
-       ws = new WebSocket("ws:/jribo.kiwi:8889");
+       ws = new WebSocket("ws:/jribo.kiwi:9000");
 
        ws.onopen = function() {
           // Web Socket is connected, send data using this.send()

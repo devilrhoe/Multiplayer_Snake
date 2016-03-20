@@ -1,4 +1,4 @@
-var webSocketsServerPort = 8889;
+var webSocketsServerPort = 9000;
 var WebSocket = require('ws')
 var webSocketServer = require('websocket').server;
 var http = require('http');
