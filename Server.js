@@ -9,7 +9,7 @@ var gameEngine = require('./GameEngine.js');
 var MAP_HEIGHT = 2000;					//Map height size in px 
 var MAP_WIDTH = 2000;					//Map width size in px
 var MAP_FOOD = 20;						//0-100% value of food in map
-var httpPort = 80;
+var httpPort = 8889;
 var PLAYER_INITIAL_LENGHT = 4;
 
 
