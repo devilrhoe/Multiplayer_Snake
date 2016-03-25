@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "spaceinvaders",
   "version": "1.0.0",
   "description": "",
@@ -25,4 +26,29 @@
   },
   "author": "",
   "license": "ISC"
+=======
+  "name": "snakeServer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "events": "^1.1.0",
+    "express": "^4.13.4",
+    "fs": "0.0.2",
+    "http": "0.0.0",
+    "path": "^0.12.7",
+    "socket.io": "^1.4.5",
+    "sys": "0.0.1",
+    "url": "^0.11.0",
+    "websocket": "^1.0.22",
+    "ws": "^1.0.1"
+  }
+>>>>>>> Canvas-testing
 }

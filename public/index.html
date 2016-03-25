@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--Reference all client-side js files//-->
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<canvas id="snakeCanvas">
+			Your browser does not support the HTML5 canvas tag.
+		</canvas>
+		<footer style="position:absolute; bottom: 0; left: 0; background: black; color:white; width: 100%;">
+			<input id="txtJoin" style="margin: 20px;">
+			<button id="btnJoin"style="margin: 20px;">Join</button>
+		</footer>
+		
+		<script src="SnakeClient.js"></script>
+		<script src="TestObject.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+		document.addEventListener("DOMContentLoaded", function(event) { 
+			var client = new SnakeClient({
+				'port':8889,
+				'domain':'localhost'
+			});
+		});
+		</script>
+	</body>
+</html>
