@@ -1,0 +1,92 @@
+@startuml
+
+class SnakeServer {
+    Clase principal, contiene las instancias a todos los objetos y permitirá
+    Acceder a los eventos de cualquier instancia desde el callback
+    ==
+    {abstract} options
+    {abstract} WWW
+    {abstract} Socket
+    {abstract} Game
+    --
+    {abstract} method events()
+    {abstract} construct()
+    {abstract} stop()
+    {abstract} start()
+    {abstract} restart()
+    {abstract} event()
+    {abstract} on()
+}
+
+class SnakeWWW {
+    Clase encargada de gestionar los contenidos de la carpeta
+    /public, css, html y javascript.
+    ..
+    Podremos acceder a los eventos desde la clase principal
+    ==
+    {abstract} options
+    {abstract} domain
+    {abstract} port
+    {abstract} server
+    --
+    {abstract} start()
+    ==
+    Eventos :
+
+    Request - Contendrá información sobre el archivo que se ha solicitado\n Información del usuario, etc.
+    Error - Evento que se lanzará si cualquier petición terminará en error o pasara algo inesperado
+}
+
+class SnakeSocket {
+    Clase encargada de gestionar los eventos de socket.io
+    ..
+    Habrá eventos gestionados por la misma clase y está emitirá otros eventos
+    que podrán ser capturados por la clase principal.
+    ==
+    {abstract} options
+    {abstract} domain
+    {abstract} port
+    {abstract} server
+    --
+    {abstract} start()
+    ==
+    Eventos:
+
+    Connection - Cuando un usuario se conecte
+    Disconnect - Cuando el usuario se desconecta
+    join - Cuando el usuario se une a la partida
+    update - Cuando el usuario quiere actualizar movimiento, hay que comunicarlo a game
+}
+
+class SnakeGame{
+    Clase encargada de instanciar lo relacionado con la partida
+    ..
+    Tendrá montones de eventos, user killed, impact, afk, etc
+    ==
+    {abstract} players
+    {abstract} Engine
+    {abstract} Map
+
+}
+
+class SnakeEngine{
+    Clase encargada de comunicar Game y los sockets, de la gestión comun de los eventos
+    ..
+    Tendrá montones de eventos, todos se podran sobrescribir en el callback.
+    ==
+    {abstract} options
+}
+
+class SnakeMap{
+    Clase encargada de gestionar el mapa y los eventos relacionados con comida, impactos, etc
+    ..
+    Emitirá eventos para determinadas acciones
+}
+
+
+SnakeServer <|--|> SnakeWWW : Handle HTTP connections and \nhttp configuration
+SnakeSocket <|--|> SnakeServer : Handles socket.io connections\n proxies the events
+SnakeServer <|--|> SnakeGame 
+SnakeGame <|--|> SnakeEngine
+SnakeGame <|--|> SnakeMap
+@enduml

@@ -1,0 +1,51 @@
+@startuml
+
+control SnakeServer
+control SnakeGameEngine
+control SnakePlayer
+
+control SnakeGameMapEngine
+control SnakeGameObject
+
+
+title Diagrama de secuencia del SnakeServer
+
+activate SnakeServer
+activate SnakeGameObject
+
+
+SnakeServer -> SnakeServer : Start Web server\nStart socket server
+SnakeServer -> SnakeGameEngine : Set options
+activate SnakeGameEngine
+activate SnakeGameMapEngine
+
+
+alt sdfnsdf over SnakePlayer
+    
+end
+
+activate SnakePlayer
+
+deactivate SnakePlayer
+
+
+
+
+
+
+
+SnakeGameEngine -> SnakeGameMapEngine : Set options
+SnakeGameEngine -> SnakeServer : instance
+
+
+
+
+
+
+deactivate SnakeGameEngine
+
+
+
+== Despues de inicializar las clases ==
+
+@enduml
